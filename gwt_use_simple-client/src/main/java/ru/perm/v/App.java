@@ -17,6 +17,8 @@ import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
+import java.util.logging.Logger;
+
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
@@ -28,6 +30,8 @@ public class App implements EntryPoint {
 	private static final String SERVER_ERROR = "An error occurred while "
 			+ "attempting to contact the server. Please check your network "
 			+ "connection and try again.";
+
+	Logger logger = Logger.getLogger(getClass().getName());
 
 	/**
 	 * Create a remote service proxy to talk to the server-side Greeting service.
@@ -110,7 +114,9 @@ public class App implements EntryPoint {
 				// First, we validate the input.
 				errorLabel.setText("");
 				String textToServer = nameField.getText();
+				logger.warning("Sending message: " + textToServer); // message will be logged to the BROWSER console
 				if (!FieldVerifier.isValidName(textToServer)) {
+					logger.severe("Invalid message (at least four characters): " + textToServer); // RED message will be logged to the BROWSER console
 					errorLabel.setText("Please enter at least four characters");
 					return;
 				}
