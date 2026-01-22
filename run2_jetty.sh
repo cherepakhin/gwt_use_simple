@@ -1,0 +1,1 @@
+./mvnw jetty:run -pl *-server -am -Denv=dev
