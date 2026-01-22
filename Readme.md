@@ -1,5 +1,10 @@
 # RPC связь GWT клиента и GWT сервера
 
+В проекте показаны базовые возможности GWT: 
+1. построение интерфейса
+2. обмен с сервером 
+3. реализация RPC сервера
+
 При использовании GWT-RPC не нужно кодировать и декодировать объект на каждом конце, можно просто передать обычный объект Java клиенту и использовать его там.
 
 ### Установка
@@ -21,7 +26,7 @@ export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64/
 ./mvnw gwt:codeserver -pl *-client -am
 ````
 
-2. В другом окне запустить приложение (./run2_jetty.sh):
+2. В другом окне запустить (./run2_jetty.sh):
 
 ````shell
 ./mvnw jetty:run -pl *-server -am -Denv=dev
@@ -46,7 +51,7 @@ export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64/
 ...
 ````
 
-В __gwt_use_simple_shared__ описание интерфейсов и общих классов.
+В __gwt_use_simple_shared__ описание интерфейсов и общих классов (классы запросов, ответов).
 RPC сервис GreetingService описывается интерфейсом GreetingService из __shared__ и имплементацией 
 в модуле __gwt_use_simple-server__ (extends com.google.gwt.user.server.rpc.jakarta.RemoteServiceServlet).
 В pom.xml клиента __gwt_use_simple-client__ импортируется так:
