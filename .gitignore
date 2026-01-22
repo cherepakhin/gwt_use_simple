@@ -37,3 +37,4 @@ logs/
 
 *.lock
 *.part
+./.mvn
