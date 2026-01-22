@@ -104,16 +104,16 @@ RPC сервис GreetingService описывается интерфейсом G
 								closeButton.setFocus(true);
 							}
 
-							public void onSuccess(GreetingResponse result) {   // result!!!
+							public void onSuccess(GreetingResponse result) {   // RESULT!!!
 								dialogBox.setText("Remote Procedure Call");
 								serverResponseLabel
 										.removeStyleName("serverResponseLabelError");
 								serverResponseLabel.setHTML(new SafeHtmlBuilder()
-										.appendEscaped(result.getGreeting())    // result!!!
+										.appendEscaped(result.getGreeting())    // RESULT!!!
 										.appendHtmlConstant("<br><br>I am running ")
-										.appendEscaped(result.getServerInfo())  // result!!!
+										.appendEscaped(result.getServerInfo())  // RESULT!!!
 										.appendHtmlConstant(".<br><br>It looks like you are using:<br>")
-										.appendEscaped(result.getUserAgent())   // result!!!
+										.appendEscaped(result.getUserAgent())   // RESULT!!!
 										.toSafeHtml());
 								dialogBox.center();
 								closeButton.setFocus(true);
